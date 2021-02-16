@@ -40,6 +40,6 @@
       @enderror
   </div>
   <div class="card-footer">
-      <a href="{{ route('materi.index') }}" class="btn btn-danger mr-2" style="border-radius: 0;">Back</a>
+      <a href="{{ route('admin.materi.index') }}" class="btn btn-danger mr-2" style="border-radius: 0;">Back</a>
       <button type="submit" class="btn btn-success">{{ $submit ?? 'Update' }}</button>
   </div>
