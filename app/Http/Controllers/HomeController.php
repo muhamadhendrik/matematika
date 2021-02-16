@@ -31,7 +31,10 @@ class HomeController extends Controller
         $name = Auth::user()->name;
         if ($jam >= 18) {
             $greeting = "Selamat Malam ". $name;
-        } elseif ($jam >= 12) {
+        }elseif($jam >= 15){
+            $greeting = "Selamat Sore ". $name;
+        }
+         elseif ($jam >= 12) {
             $greeting = "Selamat Siang ". $name;
         } elseif ($jam < 12) {
             $greeting = "Selamat Pagi ". $name;
