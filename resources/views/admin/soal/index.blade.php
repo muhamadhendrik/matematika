@@ -22,9 +22,15 @@
                                     <th>Pilihan D</th>
                                     <th>Pilihan E</th>
                                     <th>Jawaban Benar</th>
-                                    <th>Thumbnail 1</th>
-                                    <th>Thumbnail 2</th>
-                                    <th>Thumbnail 3</th>
+                                    @if($question->thumbnail1)
+                                        <th>Thumbnail 1</th>
+                                    @endif
+                                    @if($question->thumbnail2)
+                                        <th>Thumbnail 2</th>
+                                    @endif
+                                    @if($question->thumbnail3)
+                                        <th>Thumbnail 3</th>
+                                    @endif
                                     <th>Action</th>
                                 </tr>
                                 @forelse($soal as $s)
@@ -38,9 +44,15 @@
                                         <td>{!! Str::limit($s->pilihan_d, 50) !!}</td>
                                         <td>{!! Str::limit($s->pilihan_e, 50) !!}</td>
                                         <td>{!! Str::limit($s->jawaban_benar, 50) !!}</td>
-                                        <td><img src="{{ $s->takeImageSatu }}" width="100px"></td>
-                                        <td><img src="{{ $s->takeImageDua }}" width="100px"></td>
-                                        <td><img src="{{ $s->takeImageTiga }}" width="100px"></td>
+                                        @if($question->thumbnail1)
+                                            <td><img src="{{ $s->takeImageSatu }}" width="100px"></td>
+                                        @endif
+                                        @if($question->thumbnail2)
+                                            <td><img src="{{ $s->takeImageDua }}" width="100px"></td>
+                                        @endif
+                                        @if($question->thumbnail3)
+                                            <td><img src="{{ $s->takeImageTiga }}" width="100px"></td>
+                                        @endif
                                         <td>
                                             <form action="{{ route('admin.soal.delete', $s->id) }}" method="post"
                                                 class="d-inline">
