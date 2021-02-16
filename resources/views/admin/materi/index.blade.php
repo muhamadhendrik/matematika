@@ -17,7 +17,9 @@
                                     <th>Kode Materi</th>
                                     <th>Sub Materi</th>
                                     <th>Materi</th>
-                                    <th>Thumbnail</th>
+                                    @if ($question->thumbnail)
+                                        <th>Thumbnail 1</th>
+                                    @endif
                                     <th>Action</th>
                                 </tr>
                                 @forelse($materi as $m)
@@ -26,7 +28,9 @@
                                         <td>{{ $m->kode_materi }}</td>
                                         <td>{{ Str::limit($m->sub_materi, 50) }}</td>
                                         <td>{!! Str::limit($m->materi, 50) !!}</td>
-                                        <td><img src="{{ $m->takeImage }}" width="100px"></td>
+                                        @if ($question->thumbnail)
+                                            <td><img src="{{ $m->takeImage }}" width="100px"></td>
+                                        @endif
                                         <td>
                                             <form action="{{ route('admin.materi.delete', $m->id) }}" method="post">
                                                 @csrf
