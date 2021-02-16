@@ -31,6 +31,9 @@
                                     @if($question->thumbnail3)
                                         <th>Thumbnail 3</th>
                                     @endif
+                                    <th>Thumbnail 1</th>
+                                    <th>Thumbnail 2</th>
+                                    <th>Thumbnail 3</th>
                                     <th>Action</th>
                                 </tr>
                                 @forelse($soal as $s)
@@ -53,6 +56,9 @@
                                         @if($question->thumbnail3)
                                             <td><img src="{{ $s->takeImageTiga }}" width="100px"></td>
                                         @endif
+                                        <td><img src="{{ $s->takeImageSatu }}" width="100px"></td>
+                                        <td><img src="{{ $s->takeImageDua }}" width="100px"></td>
+                                        <td><img src="{{ $s->takeImageTiga }}" width="100px"></td>
                                         <td>
                                             <form action="{{ route('admin.soal.delete', $s->id) }}" method="post"
                                                 class="d-inline">

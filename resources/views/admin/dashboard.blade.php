@@ -2,6 +2,23 @@
 @section('content')
     <div class="section-body">
         <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="m-0">Halo, {{ $greeting }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Mtk Mr Catur</h6>
+
+                        <p class="card-text">Selamat datang di halaman dashboard admin aplikasi Mtk Mr Catur. Aplikasi ini
+                            adalah aplikasi pembelajaran matematika untuk memudahka para siswa/i belajar dimanapun dan
+                            kapanpun. Dengan adanya aplikasi ini saya berharap dapat mempermudah pembelajaran untuk para
+                            pelajar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
@@ -12,7 +29,7 @@
                             <h4>Total Admin</h4>
                         </div>
                         <div class="card-body">
-                            1
+                            {{ $user }}
                         </div>
                     </div>
                 </div>
@@ -27,7 +44,7 @@
                             <h4>Materi</h4>
                         </div>
                         <div class="card-body">
-                            1
+                            {{ $materi }}
                         </div>
                     </div>
                 </div>
@@ -42,7 +59,7 @@
                             <h4>Soal</h4>
                         </div>
                         <div class="card-body">
-                            1
+                            {{ $soal }}
                         </div>
                     </div>
                 </div>

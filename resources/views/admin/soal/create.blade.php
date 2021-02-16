@@ -1,4 +1,3 @@
-
 @extends('layouts.dashboard.app',['title' => 'Tambah Soal'])
 @section('content')
     <!-- Main Content -->
