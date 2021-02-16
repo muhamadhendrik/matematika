@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.app')
+@extends('layouts.dashboard.app',['title' => 'Crate Materi'])
 @section('content')
     <!-- Main Content -->
     <div class="row">
