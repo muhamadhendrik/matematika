@@ -15,8 +15,11 @@ class SoalController extends Controller
      */
     public function index(Soal $soal)
     {
+        $questions = Soal::get();
+        foreach($questions as $question);
         return view('admin.soal.index',[
             'soal' => $soal->latest()->paginate(5),
+            'question' => $question
         ]);
     }
 
@@ -116,25 +119,34 @@ class SoalController extends Controller
             'thumbnail3' => 'image|mimes:png,jpg,jpeg,svg|max:3408',
         ]);
 
-         if(request()->file('thumbnail1')){
+        // thumb 1
+        if(request()->file('thumbnail1'))
+        {
             \Storage::delete($soal->thumbnail1);
-            $thumbnail=request()->file('thumbnail1')->store("img/thumb1");
-        } elseif(request()->file('thumbnail2')){
+            $thumbnail_satu = request()->file('thumbnail1')->store("img/thumb1");
+        } else {
+            $thumbnail_satu = $soal->thumbnail1;
+        }
+        // thumb 2
+        if(request()->file('thumbnail2'))
+        {
             \Storage::delete($soal->thumbnail2);
-            $thumbnail=request()->file('thumbnail2')->store("img/thumb2");
-        } elseif(request()->file('thumbnail3')){
+            $thumbnail_dua = request()->file('thumbnail2')->store("img/thumb1");
+        } else {
+            $thumbnail_dua = $soal->thumbnail2;
+        }
+        //thumb 3
+        if(request()->file('thumbnail3'))
+        {
             \Storage::delete($soal->thumbnail3);
-            $thumbnail=request()->file('thumbnail3')->store("img/thumb3");
-        }else{
-             $thumbnail1 = $soal->thumbnail1;
-             $thumbnail2 = $soal->thumbnail2;
-             $thumbnail3 = $soal->thumbnail3;
+            $thumbnail_tiga = request()->file('thumbnail3')->store("img/thumb1");
+        } else {
+            $thumbnail_tiga = $soal->thumbnail3;
         }
 
-
-        $attr['thumbnail1'] = $thumbnail1;
-        $attr['thumbnail2'] = $thumbnail2;
-        $attr['thumbnail3'] = $thumbnail3;
+        $attr['thumbnail1'] = $thumbnail_satu;
+        $attr['thumbnail2'] = $thumbnail_dua;
+        $attr['thumbnail3'] = $thumbnail_tiga;
 
         $soal->update($attr);
         Alert::success('Soal Berhasil Di Ubah');

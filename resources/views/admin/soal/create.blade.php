@@ -22,6 +22,5 @@
         CKEDITOR.replace('pilihan_d');
         CKEDITOR.replace('pilihan_e');
         CKEDITOR.replace('jawaban_benar');
-
     </script>
 @stop

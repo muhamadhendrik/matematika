@@ -32,6 +32,7 @@
                         class="{{ request()->is('admin/materi') || request()->is('admin/materi/create') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.materi.index') }}">Materi</a>
                     </li>
+                    <li class="{{ request()->is('admin/soal') || request()->is('admin/soal/create') ? 'active' : '' }}">
                     <li
                         class="{{ request()->is('admin/soal') || request()->is('admin/soal/create') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.soal.index') }}">Soal</a>
