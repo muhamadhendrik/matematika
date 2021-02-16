@@ -11,7 +11,7 @@ class Soal extends Model
         'kode_soal','soal','pilihan_a','pilihan_b','pilihan_c','pilihan_d','pilihan_e','jawaban_benar','thumbnail1','thumbnail2','thumbnail3',
     ];
 
-     public function getTakeImageAttribute(){
+     public function getTakeImageSatuAttribute(){
         return "/storage/" . $this->thumbnail1;
     }
 
