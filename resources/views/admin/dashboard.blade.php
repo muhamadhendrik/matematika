@@ -2,6 +2,24 @@
 @section('content')
     <div class="section-body">
         <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="m-0"> Hallo </h5>
+                        {{-- <h5 class="m-0">Halo, {{ $greeting }}</h5> --}}
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Special title treatment</h6>
+
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam labore numquam
+                            distinctio, quisquam dolorum aut omnis facilis atque consectetur fugiat, repellendus in ex.
+                            Eveniet
+                            delectus consectetur dicta, rerum veniam atque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
@@ -12,7 +30,7 @@
                             <h4>Total Admin</h4>
                         </div>
                         <div class="card-body">
-                            1
+                            {{ $user }}
                         </div>
                     </div>
                 </div>
@@ -27,7 +45,7 @@
                             <h4>Materi</h4>
                         </div>
                         <div class="card-body">
-                            1
+                            {{ $materi }}
                         </div>
                     </div>
                 </div>
@@ -42,7 +60,7 @@
                             <h4>Soal</h4>
                         </div>
                         <div class="card-body">
-                            1
+                            {{ $soal }}
                         </div>
                     </div>
                 </div>

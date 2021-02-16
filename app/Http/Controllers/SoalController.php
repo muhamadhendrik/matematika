@@ -27,7 +27,7 @@ class SoalController extends Controller
      */
     public function create(Soal $soal)
     {
-         return view('admin.soal.create', compact('materi'));
+         return view('admin.soal.create', compact('soal'));
     }
 
     /**

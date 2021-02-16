@@ -24,7 +24,7 @@
             </li>
 
             <li
-                class="nav-item dropdown {{ request()->is('admin/materi') || request()->is('admin/materi/create') || request()->is('admin/soal') ? 'active' : '' }}">
+                class="nav-item dropdown {{ request()->is('admin/materi') || request()->is('admin/materi/create') || request()->is('admin/soal') || request()->is('admin/soal/create') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-pencil-ruler"></i>
                     <span>Materi & Soal</span></a>
                 <ul class="dropdown-menu">
@@ -32,8 +32,9 @@
                         class="{{ request()->is('admin/materi') || request()->is('admin/materi/create') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.materi.index') }}">Materi</a>
                     </li>
-                    <li class="{{ request()->is('admin/soal') ? 'active' : '' }}">
-                        <a class="nav-link" href="">Soal</a>
+                    <li
+                        class="{{ request()->is('admin/soal') || request()->is('admin/soal/create') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.soal.index') }}">Soal</a>
                     </li>
                 </ul>
             </li>
