@@ -35,6 +35,7 @@ Route::prefix('/admin')->name('admin.')->middleware('auth')->group(function(){
         Route::get('/','SoalController@index')->name('index');
         Route::get('/create','SoalController@create')->name('create');
         Route::post('/store','SoalController@store')->name('store');
+        Route::get('/show/{soal}','SoalController@show')->name('show');
         Route::get('/edit/{soal}','SoalController@edit')->name('edit');
         Route::patch('/edit/{soal}/update','SoalController@update')->name('update');
         Route::delete('/delete/{soal}','SoalController@destroy')->name('delete');

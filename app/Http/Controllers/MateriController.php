@@ -11,8 +11,11 @@ class MateriController extends Controller
 
     public function index(Materi $materi)
     {
+        $questions = $materi->get();
+        foreach($questions as $question);
         return view('admin.materi.index',[
             'materi' => $materi->latest()->paginate(5),
+            'question' => $question
         ]);
     }
 
