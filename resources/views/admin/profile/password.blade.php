@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-10 col-lg-12">
             <div class="card">
-                <form action="{{ route('profile.updatepassword') }}" method="post">
+                <form action="{{ route('admin.profile.updatepassword') }}" method="post">
                     @csrf
                     @method('PATCH')
                     <div class="card-body">
