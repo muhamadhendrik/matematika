@@ -29,6 +29,9 @@
               <strong>{{ $message }}</strong>
           </span>
       @enderror
+      @if($materi)
+          <img src="{{ $materi->TakeImage }}" width="200" alt="" srcset="">
+      @endif
       <div class="form-grup">
           <label for="thumbnail">Thumbnail</label>
           <input type="file" name="thumbnail" class="form-control" id="thumbnail" />

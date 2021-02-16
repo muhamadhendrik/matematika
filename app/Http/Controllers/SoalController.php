@@ -66,7 +66,7 @@ class SoalController extends Controller
 
         Alert::success('Soal Berhasil Di Tambahkan');
 
-        return redirect('/admin/soal');
+        return redirect()->route('admin.soal.index');
     }
 
     /**
@@ -139,7 +139,7 @@ class SoalController extends Controller
         $soal->update($attr);
         Alert::success('Soal Berhasil Di Ubah');
 
-        return redirect('/admin/soal');
+        return redirect()->route('admin.soal.index');
     }
 
     /**
@@ -156,6 +156,6 @@ class SoalController extends Controller
         $soal->delete();
         Alert::success('Soal Berhasil Di Hapus');
 
-        return redirect('/admin/soal');
+        return redirect()->route('admin.soal.index');
     }
 }
