@@ -42,7 +42,7 @@ class MateriController extends Controller
 
         Alert::success('Materi Berhasil Di Tambahkan');
 
-        return redirect('/admin/materi');
+        return redirect()->route('admin.materi.index');
     }
 
 
@@ -81,7 +81,7 @@ class MateriController extends Controller
         $materi->update($attr);
         Alert::success('Materi Berhasil Di Ubah');
 
-        return redirect('/admin/materi');
+        return redirect()->route('admin.materi.index');
     }
 
 
@@ -91,6 +91,6 @@ class MateriController extends Controller
         $materi->delete();
         Alert::success('Materi Berhasil Di Hapus');
 
-        return redirect('/admin/materi');
+        return redirect()->route('admin.materi.index');
     }
 }
