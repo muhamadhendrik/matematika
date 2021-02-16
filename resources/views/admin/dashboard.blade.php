@@ -5,16 +5,15 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="m-0"> Hallo </h5>
-                        {{-- <h5 class="m-0">Halo, {{ $greeting }}</h5> --}}
+                        <h5 class="m-0">Halo, {{ $greeting }}</h5>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title">Special title treatment</h6>
+                        <h6 class="card-title">Mtk Mr Catur</h6>
 
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam labore numquam
-                            distinctio, quisquam dolorum aut omnis facilis atque consectetur fugiat, repellendus in ex.
-                            Eveniet
-                            delectus consectetur dicta, rerum veniam atque.</p>
+                        <p class="card-text">Selamat datang di halaman dashboard admin aplikasi Mtk Mr Catur. Aplikasi ini
+                            adalah aplikasi pembelajaran matematika untuk memudahka para siswa/i belajar dimanapun dan
+                            kapanpun. Dengan adanya aplikasi ini saya berharap dapat mempermudah pembelajaran untuk para
+                            pelajar.</p>
                     </div>
                 </div>
             </div>

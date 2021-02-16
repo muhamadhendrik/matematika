@@ -25,7 +25,7 @@
                                         <th>{{ $loop->iteration + $materi->firstItem() - 1 . '.' }}</th>
                                         <td>{{ $m->kode_materi }}</td>
                                         <td>{{ Str::limit($m->sub_materi, 50) }}</td>
-                                        <td>{{ Str::limit($m->materi, 50) }}</td>
+                                        <td>{!! Str::limit($m->materi, 50) !!}</td>
                                         <td><img src="{{ $m->takeImage }}" width="100px"></td>
                                         <td>
                                             <form action="{{ route('admin.materi.delete', $m->id) }}" method="post">

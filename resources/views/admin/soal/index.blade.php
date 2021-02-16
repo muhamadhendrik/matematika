@@ -31,13 +31,13 @@
                                     <tr>
                                         <th>{{ $loop->iteration + $soal->firstItem() - 1 . '.' }}</th>
                                         <td>{{ $s->kode_soal }}</td>
-                                        <td>{{ Str::limit($s->soal, 50) }}</td>
-                                        <td>{{ Str::limit($s->pilihan_a, 50) }}</td>
-                                        <td>{{ Str::limit($s->pilihan_b, 50) }}</td>
-                                        <td>{{ Str::limit($s->pilihan_c, 50) }}</td>
-                                        <td>{{ Str::limit($s->pilihan_d, 50) }}</td>
-                                        <td>{{ Str::limit($s->pilihan_e, 50) }}</td>
-                                        <td>{{ Str::limit($s->jawaban_benar, 50) }}</td>
+                                        <td>{!! Str::limit($s->soal, 50) !!}</td>
+                                        <td>{!! Str::limit($s->pilihan_a, 50) !!}</td>
+                                        <td>{!! Str::limit($s->pilihan_b, 50) !!}</td>
+                                        <td>{!! Str::limit($s->pilihan_c, 50) !!}</td>
+                                        <td>{!! Str::limit($s->pilihan_d, 50) !!}</td>
+                                        <td>{!! Str::limit($s->pilihan_e, 50) !!}</td>
+                                        <td>{!! Str::limit($s->jawaban_benar, 50) !!}</td>
                                         <td><img src="{{ $s->takeImageSatu }}" width="100px"></td>
                                         <td><img src="{{ $s->takeImageDua }}" width="100px"></td>
                                         <td><img src="{{ $s->takeImageTiga }}" width="100px"></td>

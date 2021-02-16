@@ -45,6 +45,14 @@ class HomeController extends Controller
             'user' => User::count(),
             'materi' => Materi::count(),
             'soal' => Soal::count(),
+            'greeting' => $this->greeting(),
         ]);
+    }
+
+    public function dashboard()
+    {
+        $greeting = $this->greeting();
+
+        return view('dashboard', compact('greeting'));
     }
 }
