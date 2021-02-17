@@ -17,9 +17,7 @@
                                     <th>Kode Materi</th>
                                     <th>Sub Materi</th>
                                     <th>Materi</th>
-                                    @if ($question->thumbnail)
-                                        <th>Thumbnail 1</th>
-                                    @endif
+                                    <th>Thumbnail</th>
                                     <th>Action</th>
                                 </tr>
                                 @forelse($materi as $m)
@@ -28,20 +26,22 @@
                                         <td>{{ $m->kode_materi }}</td>
                                         <td>{{ Str::limit($m->sub_materi, 50) }}</td>
                                         <td>{!! Str::limit($m->materi, 50) !!}</td>
-                                        @if ($question->thumbnail)
+                                        @if ($m->thumbnail)
                                             <td><img src="{{ $m->takeImage }}" width="100px"></td>
+                                        @else
+                                            <td><span class="button btn-warning small btn-round">Kosong</span></td>
                                         @endif
                                         <td>
                                             <form action="{{ route('admin.materi.delete', $m->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger mr-2 float-left" data-toggle="tooltip"
+                                                <button class="btn btn-danger mr-2 mb-2  float-left" data-toggle="tooltip"
                                                     data-placement="top" data-original-title="Delete"
                                                     onclick="return confirm('are you sure?')"><i
                                                         class="fas fa-trash"></i></button>
                                             </form>
                                             <a href="{{ route('admin.materi.edit', $m->id) }}"
-                                                class="btn btn-icon btn-warning" data-toggle="tooltip" data-placement="top"
+                                                class="btn btn-icon btn-warning ml-2" data-toggle="tooltip" data-placement="top"
                                                 title="" data-original-title="Edit"><i class="fas fa-edit"></i></a>
                                         </td>
                                     </tr>

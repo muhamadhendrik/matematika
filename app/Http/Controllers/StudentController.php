@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\{Materi,Soal};
 
 class StudentController extends Controller
 {
@@ -10,8 +11,8 @@ class StudentController extends Controller
         return view('students.index');
     }
 
-    public function materi(){
-        return view('students.materi');
+    public function materi(Materi $materi){
+        return view('students.materi', compact('materi'));
     }
 
     public function soal(){

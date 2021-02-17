@@ -15,11 +15,8 @@ class SoalController extends Controller
      */
     public function index(Soal $soal)
     {
-        $questions = Soal::get();
-        foreach($questions as $question);
         return view('admin.soal.index',[
-            'soal' => $soal->latest()->paginate(5),
-            'question' => $question
+            'soal' => $soal->latest()->paginate(5)
         ]);
     }
 

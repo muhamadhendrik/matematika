@@ -17,28 +17,6 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/components.css') }}">
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            background-color: white;
-            padding: 3px;
-        }
-
-        .grid-conta {
-            display: grid;
-            grid-template-columns: auto auto auto auto;
-            background-color: white;
-            padding: 3px;
-        }
-
-        .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 3px;
-            font-size: 20px;
-        }
-
-    </style>
 </head>
 
 <body style="background:rgb(0, 132, 255)">
