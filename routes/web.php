@@ -5,8 +5,11 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('auth.login');
 // })->middleware('guest');
-Route::get('/',function(){
-    return view('welcome');
+
+Route::prefix('/')->name('student.')->group(function(){
+    Route::get('/', 'StudentController@index')->name('index');
+    Route::get('/materi', 'StudentController@materi')->name('materi');
+    Route::get('/soal', 'StudentController@soal')->name('soal');
 });
 
 Auth::routes();
