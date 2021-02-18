@@ -41,7 +41,7 @@
                                                         class="fas fa-trash"></i></button>
                                             </form>
                                             <a href="{{ route('admin.materi.edit', $m->id) }}"
-                                                class="btn btn-icon btn-warning ml-2" data-toggle="tooltip" data-placement="top"
+                                                class="btn btn-icon btn-warning" data-toggle="tooltip" data-placement="top"
                                                 title="" data-original-title="Edit"><i class="fas fa-edit"></i></a>
                                         </td>
                                     </tr>
