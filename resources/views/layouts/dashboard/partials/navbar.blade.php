@@ -16,14 +16,34 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                </form>
+                <button data-toggle="modal" data-target="#logoutModal" class="dropdown-item text-danger">
+                    <i class="fas fa-sign-out-alt"></i><span> Logout</span>
+                </button>
             </div>
         </li>
     </ul>
 </nav>
+{{-- modal logout --}}
+<div class="modal fade" tabindex="-1" role="dialog" id="logoutModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Perhatian!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Apa anda yakin ingin keluar dari Aplikasi jika ya klik "Logout".</p>
+        </div>
+        <div class="modal-footer bg-whitesmoke br">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <a href="{{ route('logout') }}" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();" class="btn btn-danger">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form id="logout-form" action="{{ route('logout') }}" method="POST">
+    @csrf
+</form>
