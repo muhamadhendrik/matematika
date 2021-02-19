@@ -41,7 +41,8 @@ class LoginController extends Controller
 
     public function authenticated()
     {
-        Alert::success('Message Information!', 'Welcome ' . auth()->user()->name);
+       toast('Selamat Anda Berhasil login','success');
+
     }
 
 

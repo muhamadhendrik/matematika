@@ -12,7 +12,7 @@ class MateriController extends Controller
     public function index(Materi $materi)
     {
         return view('admin.materi.index',[
-            'materi' => $materi->latest()->paginate(5),
+            'materi' => $materi->latest()->paginate(5)
         ]);
     }
 

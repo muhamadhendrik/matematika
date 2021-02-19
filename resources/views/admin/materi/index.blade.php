@@ -26,12 +26,16 @@
                                         <td>{{ $m->kode_materi }}</td>
                                         <td>{{ Str::limit($m->sub_materi, 50) }}</td>
                                         <td>{!! Str::limit($m->materi, 50) !!}</td>
-                                        <td><img src="{{ $m->takeImage }}" width="100px"></td>
+                                        @if ($m->thumbnail)
+                                            <td><img src="{{ $m->takeImage }}" width="100px"></td>
+                                        @else
+                                            <td><span class="button btn-warning small btn-round">Kosong</span></td>
+                                        @endif
                                         <td>
                                             <form action="{{ route('admin.materi.delete', $m->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger mr-2 float-left" data-toggle="tooltip"
+                                                <button class="btn btn-danger mr-2 mb-2  float-left" data-toggle="tooltip"
                                                     data-placement="top" data-original-title="Delete"
                                                     onclick="return confirm('are you sure?')"><i
                                                         class="fas fa-trash"></i></button>
