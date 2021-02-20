@@ -32,13 +32,15 @@
                                             <td><span class="button btn-warning small btn-round">Kosong</span></td>
                                         @endif
                                         <td>
-                                            <form action="{{ route('admin.materi.delete', $m->id) }}" method="post">
+
+                                            <form id="data-{{ $m->id }}"
+                                                action="{{ route('admin.materi.delete', $m->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger mr-2 mb-2  float-left" data-toggle="tooltip"
-                                                    data-placement="top" data-original-title="Delete"
-                                                    onclick="return confirm('are you sure?')"><i
-                                                        class="fas fa-trash"></i></button>
+                                                <button type="button" class="btn btn-danger mr-2 mb-2 float-left"
+                                                    onclick="confirmDelete('{{ $m->id }}')">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
                                             </form>
                                             <a href="{{ route('admin.materi.edit', $m->id) }}"
                                                 class="btn btn-icon btn-warning" data-toggle="tooltip" data-placement="top"
@@ -64,6 +66,31 @@
 @section('script')
 <script>
     CKEDITOR.replace('materi');
+
+    function confirmDelete(id) {
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            allowOutsideClick: false,
+        }).then((result) => {
+            if (result.value) {
+                Swal.fire({
+                    title: "Sedang Menghapus Materi",
+                    showConfirmButton: false,
+                    timer: 2300,
+                    timerProgressBar: true,
+                    onOpen: () => {
+                        $('#data-' + id).submit();
+                        Swal.showLoading();
+                    }
+                });
+            }
+        });
+    }
 
 </script>
 @stop

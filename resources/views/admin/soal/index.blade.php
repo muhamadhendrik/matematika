@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.app',['title' => 'Materi'])
+@extends('layouts.dashboard.app',['title' => 'Soal'])
 @section('content')
     <!-- Main Content -->
     <div class="section-body">
@@ -54,14 +54,14 @@
                                             <td><span class="button btn-warning small btn-round">Kosong</span></td>
                                         @endif
                                         <td>
-                                            <form action="{{ route('admin.soal.delete', $s->id) }}" method="post"
-                                                class="d-inline">
+                                            <form id="data-{{ $s->id }}"
+                                                action="{{ route('admin.soal.delete', $s->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger mr-2 mb-2 float-left" data-toggle="tooltip"
-                                                    data-placement="top" data-original-title="Delete"
-                                                    onclick="return confirm('are you sure?')"><i
-                                                        class="fas fa-trash"></i></button>
+                                                <button type="button" class="btn btn-danger mr-2 mb-2 float-left"
+                                                    onclick="confirmDelete('{{ $s->id }}')">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
                                             </form>
                                             <a href="{{ route('admin.soal.show', $s->id) }}"
                                                 class="btn btn-icon btn-success mb-2" data-toggle="tooltip" data-placement="top"
@@ -89,7 +89,38 @@
 @endsection
 @section('script')
 <script>
-    CKEDITOR.replace('materi');
+    CKEDITOR.replace('soal');
+    CKEDITOR.replace('pilihan_a');
+    CKEDITOR.replace('pilihan_b');
+    CKEDITOR.replace('pilihan_c');
+    CKEDITOR.replace('pilihan_d');
+    CKEDITOR.replace('pilihan_e');
+    CKEDITOR.replace('jawaban_benar');
+
+    function confirmDelete(id) {
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            allowOutsideClick: false,
+        }).then((result) => {
+            if (result.value) {
+                Swal.fire({
+                    title: "Sedang Menghapus Soal",
+                    showConfirmButton: false,
+                    timer: 2300,
+                    timerProgressBar: true,
+                    onOpen: () => {
+                        $('#data-' + id).submit();
+                        Swal.showLoading();
+                    }
+                });
+            }
+        });
+    }
 
 </script>
 @stop
